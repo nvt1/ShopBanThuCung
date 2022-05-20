@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "ChiTietSanPham";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<style type="text/css">
+    .imgbook {
+        transition: all 1s ease-in;
+        width: 400px;
+    }
+
+
+    .abc {
+        width: 1000px;
+        height: 1000px;
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+    }
+
+        /* Thumbnail */
+        .abc img {
+            width: 100%;
+            height: 100%;
+
+        }
+
+       
+</style>
+
+            <from>
+                <div class="abc">
+                    <div class="preview col-md-6">
+
+                        <div class="anh" pic-1">
+                            <img src="~/Images/@Model.AnhBia" alt="@Model.TenSP">
+                        </div>
+
+
+                        <ul class="preview-thumbnail nav nav-tabs">
+                            <li class="thumbnail" style="width:150px;height:150px;">
+                                <a data-target="#pic-1" data-toggle="tab">
+                                    <img src="~/Images/@Model.AnhBia">
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="container-fluid">
+                            <h3>Cách chăm sóc @Model.TenSP</h3>
+                            <div class="row">
+                                <div class="col">
+                                    @Model.MoTa
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details col-md-6">
+                        <h3 style="font-size:35px;color:hotpink;" class="product-title">@Model.TenSP</h3>
+
+                        <p class="giaban">Giá bán: <span class="" style="font-size:30px;color:red;font-weight:bold">@Html.FormatValue(Model.GiaBan, "{0:#,###}") VNĐ</span></p></br>
+                        <p class="ngaycapnhat" style="color:blue;font-size:20px;">Ngày cập nhật: @Html.FormatValue(Model.NgayCapNhat, "{0:MM/dd/yyyy}")</p></br>
+
+
+                        <p>
+                            <a href="@Url.Action("ThemGioHang", "GioHang", new {ms = Model.MaSP, url = Request.Url.ToString()})" class="btn btn-danger" role="button">
+                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add to Cart
+                            </a>
+                        </p></br></br>
+                        <div id="comment_fb">
+                            
+                            <div class="fb-comments" data-href="@Request.Url.ToString()" data-width="450" data-numposts="5"></div>
+                        </div>
+                    </div>
+                   
+                </div>
+
+            </from>

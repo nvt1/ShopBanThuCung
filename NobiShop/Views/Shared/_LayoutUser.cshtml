@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="fb:app_id" content="532903094673030" />
+
+    <title>NobiShop</title>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="~/Scripts/sp.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <meta name="keywords" content="Play-Offs Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!meta charset utf="8">
+    <!--bootstrap-->
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!--coustom css-->
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/owl.carousel.css" rel="stylesheet">
+    <link rel="~/stylesheet" href="css/chocolat.css" type="text/css" media="screen" charset="utf-8" />
+    <!--script-->
+    <script src="~/js/jquery-2.1.4.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/owl.carousel.js"></script>
+    <script type="~/text/javascript" src="js/move-top.js"></script>
+    <script type="~/text/javascript" src="js/easing.js"></script>
+    <!--fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!--script-->
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 900);
+            });
+        });
+    </script>
+
+    <style type="text/css">
+        .imgbook {
+            transition: all 1s ease-in;
+            width: 400px;
+        }
+
+
+        .thumbnail {
+            overflow: hidden;
+            border: 1px solid #e5e5e5;
+        }
+
+            /* Thumbnail */
+            .thumbnail img {
+                width: 100%;
+                height: 100%;
+                transition-duration: 0.5s;
+                /* Safari & Google Chrome */
+                -webkit-transition-duration: 0.5s;
+                /* Mozilla Firefox */
+                -moz-transition-duration: 0.5s;
+                /* Opera */
+                -o-transition-duration: 0.5s;
+                /* IE 9 */
+                -o-transition-duration: 0.5s;
+            }
+
+                /* Hover chuột vào thumbnail */
+                .thumbnail img:hover {
+                    transform: scale(1.2);
+                    /* Safari & Google Chrome */
+                    -webkit-transform: scale(1.2);
+                    /* Mozilla Firefox */
+                    -moz-transform: scale(1.2);
+                    /* Opera */
+                    -o-transform: scale(1.2);
+                    /* IE 9 */
+                    -ms-transform: scale(1.2);
+                    cursor: pointer;
+                }
+    </style>
+
+
+</head>
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=532903094673030&autoLogAppEvents=1" nonce="Z9RQE3pp"></script>
+    <div class="banner-background" id="to-top">
+        <div class="container">
+            <div class="nav-back">
+                <div class="navigation">
+                    @Html.Action("NavbarPartial", "NobiShop")
+
+                </div>
+                @Html.Action("SliderPartial", "NobiShop")
+                <div class="logo">
+                    <h1 style="text-align:center;background-color:cornflowerblue">NOBI SHOP</h1>
+                </div>
+                <div class="container">
+                    <div class="row">
+
+
+
+
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--header-ends-->
+    <!--content-->
+    <div class="our-products">
+        <div class="container">
+
+            <div class="products-gallery">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+
+                        @Html.Action("ThuCungPartial", "NobiShop")
+                        <br>
+                        @Html.Action("DichVuPartial", "NobiShop")
+
+
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                        @RenderBody()
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            @Html.Action("PhuKienPartial", "NobiShop")
+        </div>
+
+    </div>
+    <!--<h2 class="wapcatp" style="margin-top: 20px;"><span class="focus">BÌNH LUẬN</span></h2>
+    <div class="fb-comments" data-href="https://localhost:44324/NobiShop/Index#" data-numposts="5" data-order-by="reverse_time" data-width="100%"></div>
+    <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+    <div id="comments" class="fb-comments fb_iframe_widget fb_iframe_widget_fluid_desktop" data-href="https://localhost:44324/NobiShop/Index#" data-width="100%" data-order-by="reverse_time" data-numposts="5" data-colorscheme="light" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=744242242381612&amp;color_scheme=light&amp;container_width=630&amp;height=100&amp;href=http%3A%2F%2Fmy-pham-online%2F-19403094&amp;locale=vi_VN&amp;numposts=5&amp;order_by=reverse_time&amp;sdk=joey&amp;version=v7.0&amp;width=" style="width: 100%;"><span style="vertical-align: bottom; width: 100%; height: 204px;"><iframe name="f246e61a110d51c" width="1000px" height="100px" data-testid="fb:comments Facebook Social Plugin" title="fb:comments Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v7.0/plugins/comments.php?app_id=744242242381612&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df1e1ebc5f3a9a54%26domain%3Dthichdoctruyen.com%26origin%3Dhttps%253A%252F%252Fthichdoctruyen.com%252Ff2af8ad05357718%26relation%3Dparent.parent&amp;color_scheme=light&amp;container_width=630&amp;height=100&amp;href=http%3A%2F%2Fthichdoctruyen.com%2Fdoc-truyen%2Fnang-dau-cuc-pham-full-hoan-thanh-3-19403094&amp;locale=vi_VN&amp;numposts=5&amp;order_by=reverse_time&amp;sdk=joey&amp;version=v7.0&amp;width=" style="border: none; visibility: visible; width: 100%; height: 300px;" class=""></iframe></span></div></div>
+        -->
+    <div class="footer">
+        <div class="container">
+            <div class="col-md-6 mrg1">
+                <div class="col-md-6 brk4">
+                    <div class="about">
+                        <h4>Thông Tin</h4>
+                        <ul>
+                            <li><a href="#">Họ Và Tên : Nguyễn Văn Tuấn</a></li>
+                            <li><a href="#">Mssv: 1924801030145</a></li>
+                            <li><a href="#">Lớp : D19PM01</a></li>
+                            <li><a href="#">Số điện thoại : 0866528704</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 brk4">
+                    <div class="advice">
+                        <h4>NobiShop</h4>
+                        <ul>
+                            <li><a href="#">Thú Cưng</a></li>
+                            <li><a href="#">Phụ kiện</a></li>
+                            <li><a href="#">Dịch vụ</a></li>
+                            <li><a href="#">Giới thiệu & Liên hệ</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-3 brk5">
+                <div class="follow-us">
+                    <h4>FOLLOW US</h4>
+                    <ul>
+                        <li><a href="https://facebook.com/tuanppkk" class="fb"></a></li>
+                        <li><a href="#" class="twt"></a></li>
+                        <li><a href="https://mail.google.com/mail/u/0/#inbox" class="gpls"></a></li>
+                        <li><a href="#" class="pint"></a></li>
+                        <li><a href="#" class="lnkdin"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 brk5">
+                <div class="copy-rt">
+                    <h4>COPYRIGHT</h4>
+                    <p>Tuấn đẹp trai &#169 2021 Design by <a href="http://www.facebook.com/tuanppkk" target="_blank">Nguyễn Văn Tuấn</a></p>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!--footer-->
+    <!---->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+            };
+            */
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+    </script>
+    <a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    <!---->
+</body>
+</html>

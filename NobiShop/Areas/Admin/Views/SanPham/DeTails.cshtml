@@ -1,0 +1,83 @@
+﻿@model NobiShop.Models.SANPHAM
+
+@{
+    ViewBag.Title = "DeTails";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>CHI TIET SAN PHAM</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Ten Sach
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSP)
+        </dd>
+
+        <dt>
+           Gia ban
+        </dt>
+
+        <dd>
+           @Html.FormatValue(Model.GiaBan,"{0:#,##0}") VND
+        </dd>
+
+        <dt>
+            Mo Ta
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.MoTa.ToString().Replace("\n", "</p><p>&nbsp&nbsp&nbsp&nbsp&nbsp"))
+        </dd>
+
+        <dt>
+            Anh bia
+        </dt>
+
+        <dd>
+           <img src="~/Images/@Model.AnhBia" alt="@Model.TenSP" />
+        </dd>
+
+        <dt>
+            Ngay cap nhat
+        </dt>
+
+        <dd>
+            @Html.FormatValue(Model.NgayCapNhat,"{0:dd/MM/yyyy}")
+        </dd>
+
+        <dt>
+            So luong ban
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongBan)
+        </dd>
+
+        <dt>
+           Ma loai
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaLoai)
+        </dd>
+
+        <dt>
+            Ma DV
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaDV)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sua", "Edit", new { id = Model.MaSP }) |
+    @Html.ActionLink("Ve trang quan ly", "Index")
+</p>

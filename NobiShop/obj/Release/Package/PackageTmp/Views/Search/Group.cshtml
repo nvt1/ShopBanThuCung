@@ -1,0 +1,30 @@
+﻿@model IEnumerable<IGrouping<int?, NobiShop.Models.SANPHAM>>
+@{
+    ViewBag.Title = "Group";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>DANH SACH THEO LOÀI CHÓ</h2>
+@foreach (var item in Model)
+{
+    <div>
+        <h4 style="font-weight:bold;color:red;">MÃ LOÀI CHÓ @item.Key</h4>
+        <table border="1">
+            <tr style="background-color:burlywood;font-weight:bold;">
+                <td>Mã sản phẩm</td>
+                <td>Tên sản phẩm</td>
+                <td>Mã Loài</td>
+
+            </tr>
+            @foreach (var sp in item)
+            {
+                <tr>
+                    <td>@sp.MaSP</td>
+                    <td>@sp.TenSP</td>
+                    <td>@sp.LOAI.TenLoaiCho</td>
+
+                </tr>
+            }
+        </table>
+    </div>
+}

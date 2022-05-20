@@ -1,0 +1,58 @@
+﻿@model IEnumerable<NobiShop.Models.SANPHAM>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Danh sach san pham</h2>
+<p>
+    @Html.ActionLink("Tạo mới", "ThemSP", "SanPham")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaBan)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.NgayCapNhat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuongBan)
+        </th>
+      
+        <th>
+
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenSP)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.GiaBan)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.NgayCapNhat)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SoLuongBan)
+    </td>
+    <td>
+        <a href="@Url.Action("Edit",new { id = item.MaSP })">Sửa</a> |
+        <a href="/SanPham/Details?id=@item.MaSP">Chi Tiết</a> |
+        @Html.ActionLink("Delete", "Delete", new { id = item.MaSP })
+    </td>
+
+</tr>
+    }
+
+</table>

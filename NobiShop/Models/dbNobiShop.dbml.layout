@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.75" name="dbNobiShop">
+  <DataContextMoniker Name="/dbNobiShopDataContext" />
+  <nestedChildShapes>
+    <classShape Id="721a3fd8-a88c-416a-b937-bdf04ff03e8f" absoluteBounds="6.75, 5.875, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/dbNobiShopDataContext/ADMIN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac97854c-740a-4d56-a2ce-597c78ff2b5d" absoluteBounds="6.765, 6.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3b695bf9-f43e-4e00-8f4e-7b543b6e4e3f" absoluteBounds="3.5, 2.125, 2, 2.5401025390624996">
+      <DataClassMoniker Name="/dbNobiShopDataContext/SANPHAM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="248b9466-4688-49d9-8a96-6a69cdb54ff4" absoluteBounds="3.515, 2.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ffdb8025-04fc-465a-b5cc-dc5c9e9fd35c" absoluteBounds="6.25, 2.5, 2, 1.578595377604167">
+      <DataClassMoniker Name="/dbNobiShopDataContext/CHITIETDATHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ef83c491-9f78-432d-b181-e860fd4a5527" absoluteBounds="6.265, 2.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c407d348-bae3-478c-9c58-3070ec0e5c1c" absoluteBounds="0.75, 2.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/dbNobiShopDataContext/DICHVU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="26dc7b43-2c34-41fa-8ae6-f6b3a80546f0" absoluteBounds="0.765, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="68f99185-1781-4e97-9585-428f69c7c553" absoluteBounds="3.5, 6.375, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/dbNobiShopDataContext/DONDATHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b4acfc0c-db95-4c73-9c9e-2d4c2df7eeac" absoluteBounds="3.515, 6.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="55a35c9f-698f-4ba9-a533-8cbca1e01593" absoluteBounds="0.75, 6.125, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/dbNobiShopDataContext/KHACHHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2555f668-7348-4fa1-b74d-f4395bf8c0fc" absoluteBounds="0.765, 6.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d4a8114a-2f74-4c6b-96f5-1febea23b3b6" absoluteBounds="0.75, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/dbNobiShopDataContext/LOAI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ed3191f5-7e8c-4b68-9a83-e7b16149ba13" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 3.28929768880208); (6.25 : 3.28929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbNobiShopDataContext/SANPHAM/SANPHAM_CHITIETDATHANG" />
+      <nodes>
+        <classShapeMoniker Id="3b695bf9-f43e-4e00-8f4e-7b543b6e4e3f" />
+        <classShapeMoniker Id="ffdb8025-04fc-465a-b5cc-dc5c9e9fd35c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.34699625651042); (3.5 : 3.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbNobiShopDataContext/DICHVU/DICHVU_SANPHAM" />
+      <nodes>
+        <classShapeMoniker Id="c407d348-bae3-478c-9c58-3070ec0e5c1c" />
+        <classShapeMoniker Id="3b695bf9-f43e-4e00-8f4e-7b543b6e4e3f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 6.375); (5.875 : 6); (5.875 : 3.71519853320312); (6.25 : 3.71519853320312)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbNobiShopDataContext/DONDATHANG/DONDATHANG_CHITIETDATHANG" />
+      <nodes>
+        <classShapeMoniker Id="68f99185-1781-4e97-9585-428f69c7c553" />
+        <classShapeMoniker Id="ffdb8025-04fc-465a-b5cc-dc5c9e9fd35c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.35659912109375); (3.5 : 7.35659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbNobiShopDataContext/KHACHHANG/KHACHHANG_DONDATHANG" />
+      <nodes>
+        <classShapeMoniker Id="55a35c9f-698f-4ba9-a533-8cbca1e01593" />
+        <classShapeMoniker Id="68f99185-1781-4e97-9585-428f69c7c553" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.34699625651042); (4.5 : 1.34699625651042); (4.5 : 2.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbNobiShopDataContext/LOAI/LOAI_SANPHAM" />
+      <nodes>
+        <classShapeMoniker Id="d4a8114a-2f74-4c6b-96f5-1febea23b3b6" />
+        <classShapeMoniker Id="3b695bf9-f43e-4e00-8f4e-7b543b6e4e3f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

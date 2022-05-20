@@ -1,0 +1,9 @@
+﻿@model IEnumerable<NobiShop.Models.LOAI>
+    <ul class="list-group">
+        <li class=" list-group-item active"style="font-weight:bold;text-align:center">DANH SÁCH THÚ CƯNG </li>
+        @foreach(var item in Model)
+         {
+            <a href="@Url.Action("LoaiThuCung","NobiShop",new{id=item.MaLoai})" 
+               class="list-group-item"> @item.TenLoaiCho</a>
+         }
+    </ul>

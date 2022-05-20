@@ -1,0 +1,48 @@
+﻿@using NobiShop.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<SANPHAM>
+
+@{
+    ViewBag.Title = "TRANG CHỦ";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+ 
+<hr />
+<div class="row text-center ">
+    @foreach (var sanpham in Model)
+    {
+        <div class=" col-sm-3 col-md-3 log-lg-3 col-xs-6">
+            <div class=" thumbnail">
+                <img src="~/Images/@sanpham.AnhBia" alt="@sanpham.TenSP"
+                     class="img-responsive img-rounded imgbook">
+                <div class="caption">
+                    <h4 style="min-height:70px;">
+                        <a href="@Url.Action("ChiTietSanPham","NobiShop",new {id = sanpham.MaSP})">
+                            @sanpham.TenSP
+                        </a>
+                        <p>
+                            <a href=" @Url.Action("ThemGioHang","GioHang", new { ms = sanpham.MaSP,url=Request.Url.ToString()})" class="btn btn-primary" role="button">
+                                <span class=" glyphicon glyphicon-shopping-cart" aria-hidden="true">
+
+                                </span>Add to Cart
+                            </a>
+                        </p>
+                    </h4>
+
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+    Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+    <div class="MenuTrang">
+        @Html.PagedListPager(Model, page => Url.Action("LoaiThuCung", new { iMaLoai = ViewBag.MaLoai, page = page }))
+    </div>
+    <style>
+        .MenuTrang {
+            display: inline;
+            text-align: center;
+        }
+    </style>

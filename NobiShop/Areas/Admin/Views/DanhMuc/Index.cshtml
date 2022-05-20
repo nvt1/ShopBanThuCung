@@ -1,0 +1,62 @@
+﻿@using NobiShop.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<NobiShop.Models.LOAI>
+
+@helper Truncate(string s, int length)
+{
+    if (s.Length < length)
+    {
+        @s
+    }
+    else
+    {
+        @s.Substring(0, length)
+    }
+}
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center;">QUAN LY DANH MỤC </h2>
+
+<p>
+    @Html.ActionLink("ThemMoi", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th style="text-align:center;width:900px">
+            Ten Danh Mục
+        </th>
+      
+        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Truncate(item.TenLoaiCho, 50)
+            </td>
+            
+            <td>
+                <a href="@Url.Action("Edit",new {id = item.MaLoai})" class="btn btn-warning" role="button">Sua</a>
+                <a href="@Url.Action("Details",new {id =item.MaLoai } )" class="btn btn-primary" role="button">Chi Tiet</a>
+                <a href="@Url.Action("Delete",new {id =item.MaLoai } )" class="btn btn-danger" role="button">Xoa</a>
+
+            </td>
+        </tr>
+    }
+
+</table>
+Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+</div>
+<style>
+    .MenuTrang {
+        display: inline;
+        text-align: center;
+    }
+</style>

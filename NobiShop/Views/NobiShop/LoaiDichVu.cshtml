@@ -1,0 +1,36 @@
+﻿@model IEnumerable<NobiShop.Models.SANPHAM>
+@{
+    ViewBag.Title = "TRANG CHỦ";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<h2 class=" text-center">
+    DANH SÁCH DỊCH VỤ
+</h2>
+<hr />
+<div class="row text-center ">
+    @foreach (var sanpham in Model)
+    {
+        <div class=" col-sm-3 col-md-3 log-lg-3 col-xs-6">
+            <div class=" thumbnail">
+                <img src="~/Images/@sanpham.AnhBia" alt="@sanpham.TenSP"
+                     class="img-responsive img-rounded imgbook">
+                <div class="caption">
+                    <h4 style="min-height:70px;">
+                        <a href="@Url.Action("ChiTietSanPham","NobiShop",new {id = sanpham.MaSP})">
+                            @sanpham.TenSP
+                        </a>
+                        <p>
+                            <a href=" #" class="btn btn-primary" role="button">
+                                <span class=" glyphicon glyphicon-shopping-cart" aria-hidden="true">
+
+                                </span>Add to Cart
+                            </a>
+                        </p>
+                    </h4>
+
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

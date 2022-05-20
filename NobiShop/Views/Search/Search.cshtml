@@ -1,0 +1,93 @@
+﻿@model IEnumerable<NobiShop.Models.SANPHAM>
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+@using (Html.BeginForm("Search", "Search", FormMethod.Get))
+{
+    <p>
+        <input type="text" name="strSearch" value="@ViewBag.Search" placeholder="Nhap san pham can tim ..." size="100" /><input type="submit" value="Tim kiem" />
+    </p>
+}
+
+<p>
+    /* @Html.ActionLink("Create New", "Create")
+</p>
+@{
+    if (Model != null)
+    {
+        <h2>KẾT QUẢ TÌM</h2>
+
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenSP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GiaBan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MoTa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AnhBia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NgayCapNhat)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SoLuongBan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MaLoai)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MaDV)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenSP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GiaBan)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MoTa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AnhBia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NgayCapNhat)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SoLuongBan)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaLoai)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaDV)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.MaSP }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.MaSP }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.MaSP })
+                    </td>
+                </tr>
+            }
+
+        </table>
+        }
+    }

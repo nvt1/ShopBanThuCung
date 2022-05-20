@@ -1,0 +1,91 @@
+﻿@using NobiShop.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<NobiShop.Models.DONDATHANG>
+
+@helper Truncate(string s, int length)
+{
+    if (s.Length < length)
+    {
+        @s
+    }
+    else
+    {
+        @s.Substring(0, length)
+    }
+}
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center;">QUAN LY THONG TIN ĐƠN ĐẶT HÀNG</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+
+    <tr>
+        <th>
+            Mã đơn hàng
+        </th>
+        <th>
+            Đã thanh toán
+        </th>
+        <th>
+            Tình trạng giao hàng
+        </th>
+        <th>
+            Ngày đặt
+        </th>
+        <th>
+            Ngày Giao
+        </th>
+        <th>
+            Mã Khách Hàng
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaDonHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DaThanhToan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TinhTrangGiaoHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayDat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayGiao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaKH)
+            </td>
+
+            <td>
+                <a href="@Url.Action("Edit",new {id = item.MaDonHang})" class="btn btn-warning" role="button">Sua</a>
+                <a href="@Url.Action("Details",new {id =item.MaDonHang } )" class="btn btn-primary" role="button">Chi Tiet</a>
+                <a href="@Url.Action("Delete",new {id =item.MaDonHang } )" class="btn btn-danger" role="button">Xoa</a>
+            </td>
+        </tr>
+    }
+
+</table>
+Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+</div>
+<style>
+    .MenuTrang {
+        display: inline;
+        text-align: center;
+    }
+</style>

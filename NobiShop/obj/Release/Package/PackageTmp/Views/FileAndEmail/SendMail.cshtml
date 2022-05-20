@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewBag.Title = "SendMail";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+
+<title>Contact V16</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+<link rel="icon" type="image/png" href="~/images/icons/favicon.ico" />
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="~/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="~/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="~/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="~/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="~/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="~/css/util.css">
+<link rel="stylesheet" type="text/css" href="~/css/main.css">
+
+
+<div class="contact100-header flex-sb-m">
+
+
+    <div>
+        <button class="btn-show-contact100">
+            Contact Us
+        </button>
+    </div>
+</div>
+
+<div class="container-contact100">
+    <div class="wrap-contact100">
+        <button class="btn-hide-contact100">
+            <i class="zmdi zmdi-close"></i>
+        </button>
+
+        <div class="contact100-form-title" style="background-image: url(images/bg-02.jpg);">
+            <span>Send Mail</span>
+        </div>
+
+        <form action="/FileAndEmail/SendMail" name="SendMail" method="post" enctype="multipart/form-data" class="contact100-form validate-form">
+            <p>From</p>
+            <div class="wrap-input100 validate-input">
+                <input name="From" id="name" class="input100" type="text" placeholder="Eg. example@email.com">
+            </div>
+
+            <p>To</p>
+            <div class="wrap-input100 validate-input">
+                <input name="To" id="email" class="input100" type="text" placeholder="Eg. example@email.com">
+            </div>
+
+            <p>Chủ đề</p>
+            <div class="wrap-input100 validate-input">
+
+                <input name="Subject" id="phone" class="input100" type="text" placeholder=". . . . .">
+            </div>
+
+            <p>Nội dung</p>
+            <div class="wrap-input100 validate-input">
+                <textarea name="Notes" id="message" class="input100" rows=" 4" placeholder="Your comments..."></textarea>
+            </div>
+            <div class="wrap-input100 validate-input">
+                <input name="Attachment" type="file">
+            </div>
+            <div class="container-contact100-form-btn">
+                <button class="contact100-form-btn" type="submit" value="Send">
+                    Send Now
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<!--===============================================================================================-->
+<script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="~/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="~/vendor/bootstrap/js/popper.js"></script>
+<script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="~/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="~/vendor/daterangepicker/moment.min.js"></script>
+<script src="~/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="~/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="~/js/main.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+</script>
+
+
